@@ -1,12 +1,14 @@
 import './App.css';
-import Mockman from "mockman-js";
+import {Navbar} from './components/index';
 
 function App() {
   return (
     <div className="App">
-      <h1>Meta-Social</h1>
-      <p>A social media app</p>
-      <Mockman/>
+      <div className='row'>
+        <div className="col col-one" ><Navbar/></div>
+        <div className="col col-two">User feed</div>
+        <div className="col col-three" >others</div>
+      </div>
     </div>
   );
 }

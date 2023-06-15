@@ -1,0 +1,20 @@
+.navbar-container{
+    display: flex;
+    flex-direction:column;
+    padding-right: 1.5rem;
+}
+
+.brand-name{
+    font-weight: bolder;
+    font-size: 1.5rem;
+    padding-bottom: 3rem;
+}
+
+.navbar-container .nav-item{
+    font-size: 22px;
+    padding: 15px;
+}
+
+.navbar-container .nav-item:hover, .nav-item:focus{
+    font-weight: bolder;
+}
