@@ -1,5 +1,7 @@
 import { Routes,Route, NavLink } from 'react-router-dom';
 
+import { RequiredAuth } from './components/requiredAuth';
+
 import './App.css';
 import {Navbar} from './components/index';
 import {Home,Explore,Bookmark,Login,Signup} from './pages/index';
@@ -14,9 +16,7 @@ function App() {
               <Routes>
                  <Route path="/" element={<Home/>}/>
                  <Route path="/explore" element={<Explore/>}/>
-                 <Route path="/login" element={<Login/>}/>
-                 <Route path="/signup" element={<Signup/>}/>
-                 <Route path="/bookmark" element={<Bookmark/>}/>
+                 <Route path="/bookmark" element={<RequiredAuth><Bookmark/></RequiredAuth>}/>
               </Routes>
           </div>
       
@@ -25,6 +25,10 @@ function App() {
            <NavLink to="/login"><button className='login-btn'>Login</button></NavLink>
            <NavLink to="/signup"><button className='signup-btn'>Join meta-social</button></NavLink> 
           </div>
+          <Routes>
+                 <Route path="/login" element={<Login/>}/>
+                 <Route path="/signup" element={<Signup/>}/>
+           </Routes>
         </div>
         
       </div>

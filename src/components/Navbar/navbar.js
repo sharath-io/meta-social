@@ -1,7 +1,9 @@
 import {NavLink} from 'react-router-dom';
+
 import './navbar.css';
 
 export function Navbar(){
+    
     return (
         <div className="navbar-container">
             <div className="brand-name">meta-social</div>
