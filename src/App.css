@@ -44,6 +44,12 @@
   margin: 8.3px;
 }
 
+.main-content{
+  background-color: red;
+  height: 100vh;
+  padding: 2rem;
+}
+
 .login-signup{
   display: flex;
   justify-content:flex-end;
