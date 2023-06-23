@@ -32,7 +32,6 @@ export function Login(){
    
     return (
         <div className="login-container">
-            
             <label>Username: </label>
             <input type="text" value={userData.username} onChange={(e)=> setUserData(prev => ({...prev, username:e.target.value}))}/>
             <label>Password: </label>
