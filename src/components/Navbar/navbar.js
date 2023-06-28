@@ -10,6 +10,7 @@ export function Navbar(){
             <NavLink to="/"  className="nav-item">Home</NavLink>
             <NavLink to="/explore"  className="nav-item">Scroll</NavLink >
             <NavLink to="/bookmark"  className="nav-item">Bookmarks</NavLink >
+            <NavLink to="/liked"  className="nav-item">Liked Posts</NavLink >
             {/* <NavLink to="/" className="nav-item">Liked posts</NavLink > */}
         </div>
     )
