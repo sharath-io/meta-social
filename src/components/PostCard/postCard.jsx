@@ -85,7 +85,7 @@ export function PostCard({post}){
                 <button onClick={likeHandler}>
                   {
                     isLiked()
-                    ? <FavoriteIcon style={{color: '#27ae60'}}/>
+                    ? <FavoriteIcon className='fill-icon'/>
                     : <FavoriteBorderIcon/>
                      
                   }{post?.likes?.likeCount}
@@ -95,7 +95,7 @@ export function PostCard({post}){
                  <button onClick={bookmarkHandler}>
                   {
                     postState.bookmarks.filter((post) => post._id ===_id).length>0 
-                    ? <BookmarkIcon style={{color: '#27ae60'}}/>
+                    ? <BookmarkIcon className='fill-icon'/>
                     : <BookmarkBorderIcon/>
                   }
                   </button>
