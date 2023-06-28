@@ -1,4 +1,12 @@
+import { useContext } from "react"
+import { PostContext } from "../contexts/postContext"
+import { PostCard } from "../components/PostCard/postCard";
+import { AuthContext } from "../contexts/authContext";
+
 export function Liked(){
+    const {postState} = useContext(PostContext);
+    const {authState} = useContext(AuthContext);
+    const likedPosts = postState.posts.filter(post => post.likes.likedBy.find(user => user.username === authState.user.username))
     return (
         <div>
 
@@ -7,7 +15,18 @@ export function Liked(){
             </div>
 
             <div className="main-content">
-              <p> this is about Liked posts page</p>
+               <p> this is about liked posts</p>
+
+                <div>
+                    {likedPosts?.length>0
+                   ? <ul>
+                        {
+                            likedPosts?.map(post => <PostCard post={post} key={post.id}/>)
+                        }
+                    </ul>
+                  : <p>Empty bookmarks</p>
+                 }
+                </div>
             </div>
 
             
@@ -15,3 +34,14 @@ export function Liked(){
         </div>
     )
 }
+
+
+/*
+likes: {
+      likeCount: 0,
+      likedBy: [],
+      dislikedBy: [],
+    },
+
+
+*/
