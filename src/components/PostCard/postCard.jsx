@@ -4,18 +4,22 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import ShareIcon from '@mui/icons-material/Share';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import axios from 'axios';
 import './postCard.css';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AuthContext } from '../../contexts/authContext';
 import { PostContext } from '../../contexts/postContext';
 import {addToBookmarks} from '../../utils/addToBookmarks';
 import {removeFromBookmarks} from '../../utils/removeFromBookmarks';
+import { EditPostModal } from './editPostModal';
 
 export function PostCard({post}){
     const {_id,username,content,likes} = post;
     const {authState} = useContext(AuthContext);
     const {postState,postDispatch} = useContext(PostContext);
+    const [showOptions, setShowOptions] = useState(false);
+    const [showEditPost,setShowEditPost] = useState(false);
 
     const bookmarkHandler =() =>{
       postState.bookmarks.filter((post) => post._id ===_id).length>0 
@@ -75,11 +79,34 @@ export function PostCard({post}){
      }
 
      const isLiked =() => likes?.likedBy.filter(({_id}) => authState.user._id === _id).length!==0
-     
+
+     const toggleShowOptions = ()=> setShowOptions(!showOptions)
 
     return (
             <li className="post-card" key={_id}>
-               <p>created by :  {username}</p>
+              <div>
+               <div className="post-edit-delete">
+                 <p>created by : {username}</p>
+                 {post.username === authState.user.username && <button className="edit-delete" onClick={toggleShowOptions}><MoreHorizIcon/></button>}
+                 {
+                  showOptions && 
+                  <div className='options-modal'>
+                    <button onClick={()=>{
+                      setShowEditPost(true)
+                      toggleShowOptions()
+                    }}>Edit</button>
+                    <hr/>
+                    <button>Delete</button>
+                  </div>
+                 }
+                 </div>
+                 { showEditPost && 
+                  <div className="modal">
+                    <EditPostModal post ={post} showEditPost={showEditPost} setShowEditPost={setShowEditPost}/>
+                  </div>
+                 }
+                 
+               </div>
                <p>{content}</p>
                <div className="action-items">
                 <button onClick={likeHandler}>

@@ -17,3 +17,78 @@
 .fill-icon{
     color: #27ae60;
 }
+
+.post-edit-delete{
+    display:flex;
+    justify-content:space-between;
+    position: relative;
+}
+
+.edit-delete{
+    background-color: white;
+    border: none;
+    width: fit-content
+}
+
+.options-modal{
+    position: absolute;
+    width: fit-content;
+    display:flex;
+    flex-direction: column;
+    top:1rem;
+    right:-4.5rem;
+    width: fit-content;
+    border:1px solid black;
+}
+
+.options-modal button{
+    text-align: start;
+    width: 4rem;
+    padding: 8px;
+    border:none;
+    background-color: white;
+}
+
+.options-modal button:hover{
+    background-color: #27ae60;
+}
+
+.modal,
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.overlay {
+  background: rgba(49, 49, 49, 0.8);
+}
+
+.modal-content {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background-color: #f1f1f1; 
+    padding: 14px 28px;
+    border-radius: 3px;
+    width: 40rem;
+  }
+
+  .modal-content > *{
+    padding: 4px;
+  }
+
+  .modal-heading{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* .modal-content textarea{
+    background-color: red;
+  } */
