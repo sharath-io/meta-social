@@ -7,6 +7,7 @@ import { RequiredAuth } from './components/requiredAuth';
 import {Home,Explore,Bookmark,Login,Signup, Logout} from './pages/index';
 import { useContext } from 'react';
 import { AuthContext } from './contexts/authContext';
+import { Liked } from './pages/liked';
 
 function App() {
   const location = useLocation();
@@ -25,6 +26,7 @@ function App() {
             <Route path="/" element={<RequiredAuth><Home/></RequiredAuth>}/>
             <Route path="/explore" element={<RequiredAuth><Explore/></RequiredAuth>}/>
             <Route path="/bookmark" element={<RequiredAuth><Bookmark/></RequiredAuth>}/>
+            <Route path="/liked" element={<RequiredAuth><Liked/></RequiredAuth>}/>
           </Routes>
           </div>
       

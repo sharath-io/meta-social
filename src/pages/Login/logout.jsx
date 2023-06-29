@@ -6,7 +6,6 @@ export const Logout =() =>{
     return (
       
             <div>
-                     <p>user logged in </p> 
                      <button onClick={userLogout}>Logout</button>
             </div>
 

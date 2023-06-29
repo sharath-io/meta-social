@@ -1,4 +1,4 @@
-import {Home} from './home';
+import {Home} from './Home/home';
 import {Explore} from './explore';
 import {Bookmark} from './bookmark';
 import {Login} from './Login/login';

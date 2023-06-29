@@ -9,7 +9,7 @@ const authReducer = (state,action) =>{
     case 'SET_LOGGEDIN_TRUE' : return {...state,isLoggedIn: action.payload}
     case 'SET_LOGGEDIN_FALSE' : return {...state,isLoggedIn: action.payload}
     case 'SET_USER' : return {...state,user:action.payload}
-    case 'SET_TOKEN': return {...state,toekn:action.payload}
+    case 'SET_TOKEN': return {...state,token:action.payload}
     default: return state;
   }
 }
