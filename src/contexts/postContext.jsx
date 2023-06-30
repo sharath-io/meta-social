@@ -1,24 +1,15 @@
 import { createContext, useEffect, useReducer } from "react";
 import axios from 'axios';
 
+import {postReducer} from '../reducers/postReducer';
+
 export const PostContext = createContext();
-
-
-const postReducer = (postState,action) =>{
-    switch(action.type){
-        case 'SET_ALL_POSTS': return {...postState, posts:action.payload}
-        case 'ADD_NEW_POST': return {...postState, posts:action.payload}
-        case 'GET_ALL_BOOKMARKS': return {...postState, bookmarks:action.payload}
-        default: return postState;
-    }
-}
 
 export function PostProvider({children}){
     const [postState, postDispatch] = useReducer(postReducer, {
         posts:[],
         bookmarks:[],
     })
-
 
    const getAllPosts = async () =>{
     try{
@@ -41,7 +32,6 @@ export function PostProvider({children}){
         console.log(e);
     }
    }
-
 
    useEffect(()=>{
     getAllPosts();

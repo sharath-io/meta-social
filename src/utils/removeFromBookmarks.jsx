@@ -6,7 +6,7 @@ export const removeFromBookmarks = async(encodedToken,postId,postDispatch) =>{
         {},
         {
           headers:{
-            authorization:encodedToken,
+            authorization: encodedToken,
         }}
      );;
       if(status === 200){

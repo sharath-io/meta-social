@@ -1,7 +1,7 @@
 import { useContext, useState } from "react"
-import axios from 'axios';
 import { PostContext } from "../../contexts/postContext"
 import { PostCard } from "../../components/PostCard/postCard";
+import {createPost} from '../../utils/createPost';
 
 import './home.css';
 import { AuthContext } from "../../contexts/authContext";
@@ -10,20 +10,6 @@ export function Home(){
     const {authState} = useContext(AuthContext);
     const {postState, postDispatch} = useContext(PostContext)
     const [inputText, setInputText] = useState('');
-
-    const createPost =(inputText,token) =>{
-        return axios.post('/api/posts', 
-            {
-                postData:{
-                    content: inputText
-                },
-            },
-            {
-                headers: {
-                    authorization: token,
-                  },
-        })
-    }
 
     const onPostClick = async(inputText,token) =>{
         try{
