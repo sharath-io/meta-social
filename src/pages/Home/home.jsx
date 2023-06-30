@@ -1,14 +1,14 @@
 import { useContext, useState,useEffect } from "react"
-import { PostContext } from "../../contexts/postContext"
-import { PostCard } from "../../components/PostCard/postCard";
-import {createPost} from '../../utils/createPost';
 
 import './home.css';
+import { PostContext } from "../../index"
+import {createPost} from '../../utils/createPost';
+import { PostCard } from "../../components/PostCard/postCard";
 import { AuthContext } from "../../contexts/authContext";
 
 export function Home(){
     const {authState} = useContext(AuthContext);
-    const {postState, postDispatch} = useContext(PostContext)
+    const {postState, postDispatch} = useContext(PostContext);
     const userPosts = postState.posts.filter(({username}) => username === authState.user.username);
     const [displayUserPosts,setDisplayUserPosts] = useState(userPosts);
     const [inputText, setInputText] = useState('');
