@@ -1,8 +1,7 @@
 import { useContext, useState } from 'react';
 import './postCard.css';
 import CloseIcon from '@mui/icons-material/Close';
-import { AuthContext } from '../../contexts/authContext';
-import { PostContext } from '../../contexts/postContext';
+import { AuthContext,PostContext } from '../../index';
 import {updatePostHandler} from '../../utils/updatePostHandler';
 
 export function EditPostModal({post,showEditPost,setShowEditPost}){

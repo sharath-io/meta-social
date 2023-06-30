@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-
 export const deletePost = async (encodedToken,postId,postDispatch) =>{
     try{
         const {data, status} = await axios.delete(`/api/posts/${postId}` , 

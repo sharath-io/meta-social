@@ -6,9 +6,9 @@ import reportWebVitals from './reportWebVitals';
 import { makeServer } from "./server";
 import { BrowserRouter as Router } from 'react-router-dom';
 import { AuthProvider,AuthContext } from './contexts/authContext';
-import { PostProvider } from './contexts/postContext';
+import { PostProvider,PostContext } from './contexts/postContext';
 
-export {AuthContext};
+export {AuthContext,PostContext};
 
 // Call make Server
 makeServer();

@@ -1,3 +1,5 @@
+import axios from 'axios';
+import { useContext, useState } from 'react';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -5,11 +7,9 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import ShareIcon from '@mui/icons-material/Share';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import axios from 'axios';
+
 import './postCard.css';
-import { useContext, useState } from 'react';
-import { AuthContext } from '../../contexts/authContext';
-import { PostContext } from '../../contexts/postContext';
+import { AuthContext,PostContext } from '../../index';
 import {addToBookmarks} from '../../utils/addToBookmarks';
 import {removeFromBookmarks} from '../../utils/removeFromBookmarks';
 import { EditPostModal } from './editPostModal';

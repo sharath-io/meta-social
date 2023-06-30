@@ -2,17 +2,9 @@ import axios from 'axios';
 import { createContext, useReducer } from "react";
 import {useLocation,useNavigate} from 'react-router-dom';
 
-export const AuthContext = createContext();
+import {authReducer} from '../reducers/authReducer';
 
-const authReducer = (state,action) =>{
-  switch(action.type){
-    case 'SET_LOGGEDIN_TRUE' : return {...state,isLoggedIn: action.payload}
-    case 'SET_LOGGEDIN_FALSE' : return {...state,isLoggedIn: action.payload}
-    case 'SET_USER' : return {...state,user:action.payload}
-    case 'SET_TOKEN': return {...state,token:action.payload}
-    default: return state;
-  }
-}
+export const AuthContext = createContext();
 
 export function AuthProvider({children}){
 
