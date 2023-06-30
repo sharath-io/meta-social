@@ -16,7 +16,7 @@ import { EditPostModal } from './editPostModal';
 import {deletePost} from '../../utils/deletePost';
 
 export function PostCard({post}){
-    const {_id,username,content,likes} = post;
+    const {_id,username,content,likes,createdAt} = post;
     const {authState} = useContext(AuthContext);
     const {postState,postDispatch} = useContext(PostContext);
     const [showOptions, setShowOptions] = useState(false);
@@ -88,6 +88,7 @@ export function PostCard({post}){
               <div>
                <div className="post-edit-delete">
                  <p>created by : {username}</p>
+                 <span>created At: {createdAt}</span>
                  {post.username === authState.user.username && <button className="edit-delete" onClick={toggleShowOptions}><MoreHorizIcon/></button>}
                  {
                   showOptions && 
