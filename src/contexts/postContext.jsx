@@ -10,6 +10,7 @@ const postReducer = (postState,action) =>{
         case 'ADD_NEW_POST': return {...postState, posts:action.payload}
         case 'GET_ALL_BOOKMARKS': return {...postState, bookmarks:action.payload}
         case 'EDIT_POST': return {...postState,posts:action.payload}
+        case 'DELETE_POST': return {...postState,posts:action.payload}
         default: return postState;
     }
 }

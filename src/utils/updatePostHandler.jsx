@@ -6,7 +6,7 @@ export const updatePostHandler = async(encodedToken,postDispatch,postId,postCont
         const {data, status} = await axios.post(`/api/posts/edit/${postId}` , 
         {
             postData:{
-                content:postContent
+                content: postContent
             },
         },
         {

@@ -13,6 +13,7 @@ import { PostContext } from '../../contexts/postContext';
 import {addToBookmarks} from '../../utils/addToBookmarks';
 import {removeFromBookmarks} from '../../utils/removeFromBookmarks';
 import { EditPostModal } from './editPostModal';
+import {deletePost} from '../../utils/deletePost';
 
 export function PostCard({post}){
     const {_id,username,content,likes} = post;
@@ -96,7 +97,9 @@ export function PostCard({post}){
                       toggleShowOptions()
                     }}>Edit</button>
                     <hr/>
-                    <button>Delete</button>
+                    <button onClick={()=>{
+                      deletePost(authState.token,_id,postDispatch)
+                    }}>Delete</button>
                   </div>
                  }
                  </div>
