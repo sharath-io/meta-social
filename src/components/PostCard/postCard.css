@@ -99,17 +99,15 @@
   .avatar-container{
     display:flex;
     justify-content: flex-start;
-
   }
+
   .avatar{
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 50%;
     border: 2px solid #27ae60;
+    cursor: pointer;
   }
-
-
-  
 
   .post-user-details{
     margin: 0 1rem;
@@ -122,6 +120,5 @@
   .post-header{
     display:flex;
     justify-content: space-between;
+    cursor: pointer;
   } 
-
-

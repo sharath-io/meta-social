@@ -14,6 +14,7 @@ import {addToBookmarks} from '../../utils/addToBookmarks';
 import {removeFromBookmarks} from '../../utils/removeFromBookmarks';
 import { EditPostModal } from './editPostModal';
 import {deletePost} from '../../utils/deletePost';
+import { useNavigate } from 'react-router-dom';
 
 export function PostCard({post}){
     const {_id,username,content,likes,createdAt} = post;
@@ -21,6 +22,7 @@ export function PostCard({post}){
     const {postState,postDispatch} = useContext(PostContext);
     const [showOptions, setShowOptions] = useState(false);
     const [showEditPost,setShowEditPost] = useState(false);
+    const navigate = useNavigate();
 
     const userData = postState?.users.find(user =>user.username===username );
 
@@ -89,9 +91,9 @@ export function PostCard({post}){
             <li className="post-card" key={_id}>
                <div className="post-edit-delete">
                  <div className="avatar-container">
-                     <img src={userData.avatar} alt={userData.username} className="avatar"/>
+                     <img src={userData.avatar} alt={userData.username} className="avatar"  onClick={()=> navigate(`/profile/${username}`)}/>
                      <div className="post-user-details">
-                       <div className="post-header">
+                       <div className="post-header"  onClick={()=> navigate(`/profile/${username}`)}>
                         <p><b>{userData.firstName}</b> @{username} . <span>{createdAt}</span></p>
                         {post.username === authState.user.username && <button className="edit-delete" onClick={toggleShowOptions}><MoreHorizIcon/></button>}
                         {

@@ -1,4 +1,4 @@
-import { Routes,Route, NavLink, useLocation } from 'react-router-dom';
+import { Routes,Route, NavLink, useLocation, useNavigate } from 'react-router-dom';
 
 import './App.css';
 import Mockman from "mockman-js";
@@ -12,6 +12,7 @@ import { Liked } from './pages/liked';
 
 function App() {
   const location = useLocation();
+  const navigate = useNavigate();
   const {authState,  userLogout} = useContext(AuthContext);
   return (
     <div className="App">
@@ -28,14 +29,14 @@ function App() {
             <Route path="/explore" element={<RequiredAuth><Explore/></RequiredAuth>}/>
             <Route path="/bookmark" element={<RequiredAuth><Bookmark/></RequiredAuth>}/>
             <Route path="/liked" element={<RequiredAuth><Liked/></RequiredAuth>}/>
-            <Route path="/profile" element={<RequiredAuth><Profile/></RequiredAuth>}/>
+            <Route path="/profile/:username" element={<RequiredAuth><Profile/></RequiredAuth>}/>
           </Routes>
           </div>
       
         <div className="col col-three">
           {authState.isLoggedIn ? 
             <div  className='login-signup'>
-              <NavLink to="/profile"><button className='signup-btn'>Profile</button></NavLink>
+              <button className='signup-btn'  onClick={()=> navigate(`/profile/${authState.user.username}`)}>Profile</button>
               <button className='login-btn'  onClick={userLogout}>Logout</button>
               
             </div>

@@ -1,4 +1,7 @@
+import { useParams } from "react-router-dom"
+
 export function Profile(){
+    const {username} = useParams();
     return (
         <div>
 
@@ -7,7 +10,7 @@ export function Profile(){
             </div>
 
             <div className="main-content">
-               <p> this is profile </p>
+               <p> this is profile {username} </p>
 
                
             </div>
