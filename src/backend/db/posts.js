@@ -20,7 +20,7 @@ export const posts = [
       dislikedBy: [],
     },
     username: "adarshbalika",
-    createdAt: '2023-06-25T20:57:12+05:30',
+    createdAt: '2023-06-15T20:57:12+05:30',
     updatedAt: formatDate(),
   },
   {
@@ -28,12 +28,12 @@ export const posts = [
     content:
       "Excited to start learning React! Any recommendations?",
     likes: {
-      likeCount: 10,
+      likeCount: 70,
       likedBy: [],
       dislikedBy: [],
     },
     username: "johndoe",
-    createdAt: '2023-06-28T20:57:12+05:30',
+    createdAt: '2023-06-16T20:57:12+05:30',
     updatedAt: formatDate(),
   },
   {
@@ -41,12 +41,12 @@ export const posts = [
     content:
       "Enjoying a cup of coffee while coding. Best combination ever!",
     likes: {
-      likeCount: 20,
+      likeCount: 60,
       likedBy: [],
       dislikedBy: [],
     },
     username: "johndoe",
-    createdAt: '2023-06-28T20:57:12+05:30',
+    createdAt: '2023-06-17T20:57:12+05:30',
     updatedAt: formatDate(),
   },
   {
@@ -59,7 +59,7 @@ export const posts = [
       dislikedBy: [],
     },
     username: "adarshbalika",
-    createdAt: '2023-06-26T20:57:12+05:30',
+    createdAt: '2023-06-18T20:57:12+05:30',
     updatedAt: formatDate(),
   },
   {
@@ -67,12 +67,12 @@ export const posts = [
     content:
       "Reflecting on my coding journey so far. It has been an amazing experience!",
     likes: {
-      likeCount: 4,
+      likeCount: 45,
       likedBy: [],
       dislikedBy: [],
     },
     username: "emilysmith",
-    createdAt: '2023-06-28T20:57:12+05:30',
+    createdAt: '2023-06-19T20:57:12+05:30',
     updatedAt: formatDate(),
   },
   {
@@ -80,12 +80,12 @@ export const posts = [
     content:
       "Hiking in the mountains. The view is breathtaking! #naturelover",
     likes: {
-      likeCount: 10,
+      likeCount: 40,
       likedBy: [],
       dislikedBy: [],
     },
     username: "adarshbalika",
-    createdAt: '2023-06-27T20:57:12+05:30',
+    createdAt: '2023-06-20T20:57:12+05:30',
     updatedAt: formatDate(),
   },
   {
@@ -93,12 +93,12 @@ export const posts = [
     content:
       "Trying out a new recipe today. Can't wait to taste it!",
     likes: {
-      likeCount: 8,
+      likeCount: 90,
       likedBy: [],
       dislikedBy: [],
     },
     username: "emilysmith",
-    createdAt: '2023-06-28T20:57:12+05:30',
+    createdAt: '2023-06-21T20:57:12+05:30',
     updatedAt: formatDate(),
   },
   {
@@ -106,12 +106,12 @@ export const posts = [
     content:
       "Excited to announce the launch of my new website. Check it out!",
     likes: {
-      likeCount: 8,
+      likeCount: 10,
       likedBy: [],
       dislikedBy: [],
     },
     username: "davidjohnson",
-    createdAt: '2023-06-28T20:57:12+05:30',
+    createdAt: '2023-06-22T20:57:12+05:30',
     updatedAt: formatDate(),
   },
   {
@@ -119,12 +119,12 @@ export const posts = [
     content:
       "Spending quality time with family. Cherishing these moments.",
     likes: {
-      likeCount: 8,
+      likeCount: 12,
       likedBy: [],
       dislikedBy: [],
     },
     username: "davidjohnson",
-    createdAt: '2023-06-28T20:57:12+05:30',
+    createdAt: '2023-06-23T20:57:12+05:30',
     updatedAt: formatDate(),
   },
   {
@@ -132,12 +132,12 @@ export const posts = [
     content:
       "Attending a coding competition. Ready to showcase my skills!",
     likes: {
-      likeCount: 8,
+      likeCount: 16,
       likedBy: [],
       dislikedBy: [],
     },
     username: "davidmiller",
-    createdAt: '2023-06-28T20:57:12+05:30',
+    createdAt: '2023-06-24T20:57:12+05:30',
     updatedAt: formatDate(),
   },
   {
@@ -145,12 +145,12 @@ export const posts = [
     content:
       "Working on a personal blog. Can't wait to share my thoughts!",
     likes: {
-      likeCount: 8,
+      likeCount: 19,
       likedBy: [],
       dislikedBy: [],
     },
     username: "davidmiller",
-    createdAt: '2023-06-28T20:57:12+05:30',
+    createdAt: '2023-06-25T20:57:12+05:30',
     updatedAt: formatDate(),
   },
   {
@@ -158,12 +158,12 @@ export const posts = [
     content:
       "Working on a challenging coding problem. Solving it one step at a time!",
     likes: {
-      likeCount: 8,
+      likeCount: 22,
       likedBy: [],
       dislikedBy: [],
     },
     username: "alexandercodes",
-    createdAt: '2023-06-28T20:57:12+05:30',
+    createdAt: '2023-06-26T20:57:12+05:30',
     updatedAt: formatDate(),
   },
   {
@@ -171,12 +171,12 @@ export const posts = [
     content:
       "Exploring the world of artificial intelligence. Fascinating stuff!",
     likes: {
-      likeCount: 8,
+      likeCount: 42,
       likedBy: [],
       dislikedBy: [],
     },
     username: "alexandercodes",
-    createdAt: '2023-06-28T20:57:12+05:30',
+    createdAt: '2023-06-27T20:57:12+05:30',
     updatedAt: formatDate(),
   },
   {
@@ -184,7 +184,7 @@ export const posts = [
     content:
       "Just published a new blog post. Check it out and share your thoughts!",
     likes: {
-      likeCount: 8,
+      likeCount: 89,
       likedBy: [],
       dislikedBy: [],
     },
@@ -197,12 +197,12 @@ export const posts = [
     content:
       "Spent the weekend in the countryside. Nature always brings me peace.",
     likes: {
-      likeCount: 8,
+      likeCount: 46,
       likedBy: [],
       dislikedBy: [],
     },
     username: "laurawrites",
-    createdAt: '2023-06-28T20:57:12+05:30',
+    createdAt: '2023-06-29T20:57:12+05:30',
     updatedAt: formatDate(),
   }
 ];
