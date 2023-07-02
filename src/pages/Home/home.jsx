@@ -1,26 +1,23 @@
-import { useContext, useState,useEffect } from "react"
+import { useContext, useState } from "react"
 
 import './home.css';
 import { PostContext } from "../../index"
 import {createPost} from '../../utils/createPost';
 import { PostCard } from "../../components/PostCard/postCard";
 import { AuthContext } from "../../contexts/authContext";
+import { getSortedPosts } from "../../utils/getSortedPosts";
 
 export function Home(){
     const {authState} = useContext(AuthContext);
     const {postState, postDispatch} = useContext(PostContext);
-    const userPosts = postState.posts.filter(({username}) => username === authState.user.username);
-    const [displayUserPosts,setDisplayUserPosts] = useState(userPosts);
     const [inputText, setInputText] = useState('');
     const [sortType,setSortType] = useState('Latest');
 
+    const userPosts = postState.posts.filter(post => post.username===authState.user.username);
 
-    const getDisplayPosts = (sortType) =>{
-        if(sortType === 'Latest')
-        setDisplayUserPosts([...displayUserPosts].sort((a,b) => Date.parse(b.createdAt) - Date.parse(a.createdAt)))
-        else
-        setDisplayUserPosts([...displayUserPosts].sort((a,b) => b.likes.likeCount - a.likes.likeCount));
-    }
+    const sortedPosts = getSortedPosts(userPosts,sortType);
+
+    const handleSortingChange = (event) => setSortType(event.target.value);
 
     const onPostClick = async(inputText,token) =>{
         try{
@@ -33,14 +30,7 @@ export function Home(){
             console.log(e);
         }
      }
-
-     const handleSortingChange = (event) => setSortType(event.target.value);
-
-     useEffect(()=>{
-        getDisplayPosts(sortType);
-        // eslint-disable-next-line
-     },[sortType])
-
+     
     return (
         <div>
             <div className='display-content'>
@@ -63,7 +53,7 @@ export function Home(){
                 <div>
                     <ul>
                         {
-                            displayUserPosts.map(post => <PostCard post={post} key={post.id}/>)
+                            sortedPosts.map(post => <PostCard post={post} key={post.id}/>)
                         }
                     </ul>
                 </div>

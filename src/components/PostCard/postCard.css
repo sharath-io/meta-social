@@ -38,10 +38,10 @@
     width: fit-content;
     display:flex;
     flex-direction: column;
-    top:1rem;
-    right:-4.5rem;
+    top:0.5rem;
+    right:-2rem;
     width: fit-content;
-    border:1px solid black;
+    border:1px solid black
 }
 
 .options-modal button{
