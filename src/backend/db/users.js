@@ -16,6 +16,7 @@ export const users = [
     createdAt: '2023-05-09T20:57:12+05:30',
     updatedAt: formatDate(),
     webiste:'https://adarshbalika.netlify.app/',
+    avatar: 'https://i.pravatar.cc/150?img=12'
   },
   {
     _id: uuid(),
@@ -27,6 +28,7 @@ export const users = [
     createdAt: '2023-05-10T20:57:12+05:30',
     updatedAt: formatDate(),
     webiste:'https://davidmillerstartup.com',
+    avatar: 'https://i.pravatar.cc/150?img=13'
   },
   {
     _id: uuid(),
@@ -38,6 +40,7 @@ export const users = [
     createdAt: '2023-05-11T20:57:12+05:30',
     updatedAt: formatDate(),
     webiste:'https://davidjohnsondev.com',
+    avatar: 'https://i.pravatar.cc/150?img=33'
   },
   {
     _id: uuid(),
@@ -49,6 +52,7 @@ export const users = [
     createdAt: '2023-05-12T20:57:12+05:30',
     updatedAt: formatDate(),
     webiste:'emily.smith@yahoo.com',
+    avatar: 'https://i.pravatar.cc/150?img=38'
   },
   {
     _id: uuid(),
@@ -60,6 +64,7 @@ export const users = [
     createdAt: '2023-05-13T20:57:12+05:30',
     updatedAt: formatDate(),
     webiste:'ttps://johndoeportfolio.com',
+    avatar: 'https://i.pravatar.cc/150?img=68'
   },
   {
     _id: uuid(),
@@ -71,6 +76,7 @@ export const users = [
     createdAt: '2023-05-14T20:57:12+05:30',
     updatedAt: formatDate(),
     webiste:'https://alexandercodesai.com',
+    avatar: 'https://i.pravatar.cc/150?img=52'
   },
   {
     _id: uuid(),
@@ -82,5 +88,6 @@ export const users = [
     createdAt: '2023-05-15T20:57:12+05:30',
     updatedAt: formatDate(),
     webiste:'https://laurawritesstories.com',
+    avatar: 'https://i.pravatar.cc/150?img=41'
   }
 ];
