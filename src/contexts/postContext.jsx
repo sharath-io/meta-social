@@ -7,9 +7,20 @@ export const PostContext = createContext();
 
 export function PostProvider({children}){
     const [postState, postDispatch] = useReducer(postReducer, {
+        users:[],
         posts:[],
         bookmarks:[],
-    })
+    });
+
+    const getAllUsers = async () =>{
+        try{
+            const {status,data} = await axios.get('/api/users');
+            if(status===200)
+              postDispatch({type:'SET_ALL_USERS', payload: data.users});
+        }catch(e){
+            console.log(e);
+        }
+    }
 
    const getAllPosts = async () =>{
     try{
@@ -34,6 +45,7 @@ export function PostProvider({children}){
    }
 
    useEffect(()=>{
+    getAllUsers();
     getAllPosts();
     getAllBookmarks();
    },[])
