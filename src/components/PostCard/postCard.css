@@ -8,6 +8,8 @@
 .action-items{
     display: flex;
     justify-content: space-around;
+    margin-top:1rem;
+    font-size: 15px;
 }
 
 .action-items button{
