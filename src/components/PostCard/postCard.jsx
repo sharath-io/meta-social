@@ -95,7 +95,10 @@ export function PostCard({post}){
                      <div className="post-user-details">
                        <div className="post-header"  onClick={()=> navigate(`/profile/${username}`)}>
                         <p><b>{userData.firstName}</b> @{username} . <span>{createdAt}</span></p>
-                        {post.username === authState.user.username && <button className="edit-delete" onClick={toggleShowOptions}><MoreHorizIcon/></button>}
+                        {post.username === authState.user.username && <button className="edit-delete" onClick={(event)=>{
+                          event.stopPropagation()
+                          toggleShowOptions();
+                          }}><MoreHorizIcon/></button>}
                         {
                           showOptions && 
                           <div className='options-modal'>
