@@ -102,19 +102,21 @@ export function PostCard({post}){
                         {
                           showOptions && 
                           <div className='options-modal'>
-                            <button onClick={()=>{
+                            <button onClick={(event)=>{
+                              event.stopPropagation()
                               setShowEditPost(true)
                               toggleShowOptions()
                              }}>Edit</button>
                             <hr/>
-                            <button onClick={()=>{
+                            <button onClick={(event)=>{
+                              event.stopPropagation()
                               deletePost(authState.token,_id,postDispatch)
                              }}>Delete</button>
                          </div>
                         }
                         { showEditPost && 
                           <div className="modal">
-                            <EditPostModal post ={post} showEditPost={showEditPost} setShowEditPost={setShowEditPost}/>
+                            <EditPostModal post ={post} showEditPost={showEditPost} setShowEditPost={setShowEditPost}/> 
                           </div>
                         }
                  

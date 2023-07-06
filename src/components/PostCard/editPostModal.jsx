@@ -14,9 +14,8 @@ export function EditPostModal({post,showEditPost,setShowEditPost}){
 
 
     return (
-        <div>  
+        <div onClick={(event)=>event.stopPropagation() }>  
           <div className="overlay" onClick={toggleShowEditPost}></div>
-
           <div className="modal-content" key={_id}>
              <div className="modal-heading">
                <h3>Edit your Post </h3>  
