@@ -4,6 +4,8 @@ import { PostCard } from "../components/PostCard/postCard";
 
 export function Bookmark(){
     const {postState} = useContext(PostContext);
+
+    const getPost =(id) => postState.posts?.find(post=> post._id===id);
     return (
         <div>
 
@@ -18,7 +20,7 @@ export function Bookmark(){
                     {postState.bookmarks?.length>0
                    ? <ul>
                         {
-                            postState.bookmarks?.map(post => <PostCard post={post} key={post.id}/>)
+                            postState.bookmarks?.map(post => <PostCard post={getPost(post._id)} key={post._id}/>)
                         }
                     </ul>
                   : <p>Empty bookmarks</p>
