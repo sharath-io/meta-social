@@ -1,0 +1,15 @@
+.profile-avatar{
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    border: 2px solid #27ae60;
+}
+
+.bio-info{
+    margin: 2rem 0;
+    font-size: 18px;
+}
+
+.bio-info > *{
+    margin: 1rem 0;
+}
