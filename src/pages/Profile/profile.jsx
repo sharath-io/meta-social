@@ -8,17 +8,18 @@ export function Profile(){
     const {username} = useParams();
     const {postState} = useContext(PostContext);
     const userDetails = postState.users.find(user => user.username===username);
+    const userPosts = postState.posts.filter(post => post.username===username);
     
     return (
         <div>
 
             <div className='display-content'>
-             <div className='content-heading'>@{userDetails.username}</div>
+             <div className='content-heading'>@{userDetails.username} ({userPosts.length} posts)</div>
             </div>
 
             <div className="main-content">
                <div>
-                <ProfileCard userDetails={userDetails} key={userDetails._id}/>
+                <ProfileCard userDetails={userDetails} userPosts={userPosts} key={userDetails._id}/>
                </div>  
             </div>
         </div>
