@@ -8,6 +8,7 @@ import {Home,Explore,Bookmark,Login,Signup,Profile} from './pages/index';
 import { useContext } from 'react';
 import { AuthContext } from './contexts/authContext';
 import { Liked } from './pages/liked';
+import { RightSidebar } from './components/RightSidebar/rightSidebar';
 
 
 function App() {
@@ -35,15 +36,20 @@ function App() {
       
         <div className="col col-three">
           {authState.isLoggedIn ? 
+           <div>
             <div  className='login-signup'>
               <button className='signup-btn'  onClick={()=> navigate(`/profile/${authState.user.username}`)}>Profile</button>
               <button className='login-btn'  onClick={userLogout}>Logout</button>
-              
             </div>
+              <div>
+                  <RightSidebar/>
+              </div>
+            
+           </div>
             : <div className='login-signup'>
-            <NavLink to="/login"><button className='login-btn'>Login</button></NavLink>
-            <NavLink to="/signup"><button className='signup-btn'>Join meta-social</button></NavLink> 
-            </div>
+                 <NavLink to="/login"><button className='login-btn'>Login</button></NavLink>
+                 <NavLink to="/signup"><button className='signup-btn'>Join meta-social</button></NavLink> 
+              </div>
           }
           
            <Routes>
