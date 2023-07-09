@@ -1,19 +1,21 @@
 .right-sidebar{
-    margin: 2rem;
-    border: 1px solid black;
-    border-radius: 10px;
+    margin: 1rem;
+    border: 1px solid #27ae60;
+    border-radius: 5px;
     padding: 1rem;
+    
   }
 
   .right-sidebar  li{
     padding: 1rem 0;
   }
 
-
   .user-follow-container{
     display: flex;
     justify-content: space-between;
     margin: 0;
+    cursor: pointer;
+    
   }
 
   .user-follow-container button{
@@ -23,6 +25,7 @@
     background-color: black;
     color: white;
     font-weight: bolder;
+    cursor: pointer;
   }
 
   .user-details{
@@ -40,5 +43,13 @@
     height: 3rem;
     border-radius: 50%;
     border: 2px solid #27ae60;
-    cursor: pointer;
+  }
+
+  .user-details .user-firstname{
+  font-weight: bolder;
+}
+
+  .user-details .user-firstname:hover{
+   text-decoration: underline;
+   
   }
