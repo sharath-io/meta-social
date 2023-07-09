@@ -79,3 +79,39 @@
 li{
   list-style-type: none;
 }
+
+.modal,
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.overlay {
+  background: rgba(49, 49, 49, 0.8);
+}
+
+.modal-content {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background-color: #f1f1f1; 
+    padding: 14px 28px;
+    border-radius: 3px;
+    width: 40rem;
+  }
+
+  .modal-content > *{
+    padding: 4px;
+  }
+
+  .modal-heading{
+    display: flex;
+    justify-content: space-between;
+  }

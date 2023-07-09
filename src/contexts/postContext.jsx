@@ -1,11 +1,13 @@
-import { createContext, useEffect, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
 import axios from 'axios';
 
 import {postReducer} from '../reducers/postReducer';
+import { AuthContext } from "./authContext";
 
 export const PostContext = createContext();
 
 export function PostProvider({children}){
+    const {authState} = useContext(AuthContext);
     const [postState, postDispatch] = useReducer(postReducer, {
         users:[],
         posts:[],
@@ -48,7 +50,7 @@ export function PostProvider({children}){
     getAllUsers();
     getAllPosts();
     getAllBookmarks();
-   },[])
+   },[authState.token])
 
 
     return (
