@@ -13,9 +13,12 @@ export function Home(){
     const [inputText, setInputText] = useState('');
     const [sortType,setSortType] = useState('Latest');
 
-    const userPosts = postState.posts.filter(post => post.username===authState.user.username);
+    const loggedInUser = postState.users.find(({username})=> username===authState.user.username)
 
-    const sortedPosts = getSortedPosts(userPosts,sortType);
+    const postsOfFollowed = postState.posts.filter(post => loggedInUser.following.some(({username})=> username===post.username)
+                                    ||  post.username===loggedInUser.username);
+
+    const sortedPosts = getSortedPosts(postsOfFollowed,sortType);
 
     const handleSortingChange = (event) => setSortType(event.target.value);
 
