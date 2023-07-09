@@ -34,3 +34,17 @@
 .edit-profile-form > *{
     display: block;
 }
+
+.followers-following{
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.followers-following b{
+   margin-right: 0.2rem;
+}
+
+.followers-following p{
+    margin-right: 2rem;
+}

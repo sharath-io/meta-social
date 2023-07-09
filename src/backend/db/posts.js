@@ -78,7 +78,7 @@ export const posts = [
   {
     _id: uuid(),
     content:
-      "Hiking in the mountains. The view is breathtaking! #naturelover",
+      "Hiking in the mountains. The view is breathtaking! #nature",
     likes: {
       likeCount: 40,
       likedBy: [],

@@ -11,7 +11,7 @@ import {unFollowUserHandler} from '../../utils/unFollowUserHandler';
 export function ProfileCard({userDetails, userPosts}){
     const {authState} = useContext(AuthContext);
     const {postState,postDispatch} = useContext(PostContext);
-    const {_id,avatar,username,firstName,bio,website}  = userDetails;
+    const {_id,avatar,username,firstName,bio,website,followers,following}  = userDetails;
     const [hideEdit,setHideEdit] = useState(true);
 
     return (
@@ -39,7 +39,12 @@ export function ProfileCard({userDetails, userPosts}){
             <div className='bio-info'>
                <p>{bio}</p>
                <p><b>{website}</b></p>
+               <div className="followers-following">
+                <p><b>{following.length}</b>Following</p>
+                <p><b>{followers.length}</b>Followers</p>
+               </div>
             </div>
+            
             <ul>
               {
                 userPosts.map(post => <PostCard post={post} key={post.id}/>)
