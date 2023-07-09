@@ -1,12 +1,15 @@
 .post-card{
     margin-top: 1rem;
     padding: 2rem 0;
-    border-bottom: 0.1px solid rgb(225 228 232/1);;
+    border-bottom: 0.1px solid rgb(225 228 232/1);
+    font-size: 19px;
 }
 
 .action-items{
     display: flex;
     justify-content: space-around;
+    margin-top:1rem;
+    font-size: 15px;
 }
 
 .action-items button{
@@ -17,6 +20,8 @@
 .fill-icon{
     color: #27ae60;
 }
+
+
 
 .post-edit-delete{
     display:flex;
@@ -35,10 +40,10 @@
     width: fit-content;
     display:flex;
     flex-direction: column;
-    top:1rem;
-    right:-4.5rem;
+    top:0.5rem;
+    right:-2rem;
     width: fit-content;
-    border:1px solid black;
+    border:1px solid black
 }
 
 .options-modal button{
@@ -53,42 +58,33 @@
     background-color: #27ae60;
 }
 
-.modal,
-.overlay {
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  position: fixed;
-}
+   /* .modal-content textarea{
+  background-color: red;
+  }  */
 
-.overlay {
-  background: rgba(49, 49, 49, 0.8);
-}
-
-.modal-content {
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    line-height: 1.4;
-    background-color: #f1f1f1; 
-    padding: 14px 28px;
-    border-radius: 3px;
-    width: 40rem;
+  .avatar-container{
+    display:flex;
+    justify-content: flex-start;
   }
 
-  .modal-content > *{
-    padding: 4px;
+  .avatar{
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    border: 2px solid #27ae60;
+    cursor: pointer;
   }
 
-  .modal-heading{
-    display: flex;
+  .post-user-details{
+    margin: 0 1rem;
+  }
+
+  .post-user-details > *{
+    padding-bottom: 1rem;
+  }
+
+  .post-header{
+    display:flex;
     justify-content: space-between;
-  }
-
-  /* .modal-content textarea{
-    background-color: red;
-  } */
+    cursor: pointer;
+  } 

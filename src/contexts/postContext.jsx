@@ -1,15 +1,28 @@
-import { createContext, useEffect, useReducer } from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
 import axios from 'axios';
 
 import {postReducer} from '../reducers/postReducer';
+import { AuthContext } from "./authContext";
 
 export const PostContext = createContext();
 
 export function PostProvider({children}){
+    const {authState} = useContext(AuthContext);
     const [postState, postDispatch] = useReducer(postReducer, {
+        users:[],
         posts:[],
         bookmarks:[],
-    })
+    });
+
+    const getAllUsers = async () =>{
+        try{
+            const {status,data} = await axios.get('/api/users');
+            if(status===200)
+              postDispatch({type:'SET_ALL_USERS', payload: data.users});
+        }catch(e){
+            console.log(e);
+        }
+    }
 
    const getAllPosts = async () =>{
     try{
@@ -34,9 +47,10 @@ export function PostProvider({children}){
    }
 
    useEffect(()=>{
+    getAllUsers();
     getAllPosts();
     getAllBookmarks();
-   },[])
+   },[authState.token])
 
 
     return (

@@ -14,6 +14,7 @@ import {addToBookmarks} from '../../utils/addToBookmarks';
 import {removeFromBookmarks} from '../../utils/removeFromBookmarks';
 import { EditPostModal } from './editPostModal';
 import {deletePost} from '../../utils/deletePost';
+import { useNavigate } from 'react-router-dom';
 
 export function PostCard({post}){
     const {_id,username,content,likes,createdAt} = post;
@@ -21,6 +22,9 @@ export function PostCard({post}){
     const {postState,postDispatch} = useContext(PostContext);
     const [showOptions, setShowOptions] = useState(false);
     const [showEditPost,setShowEditPost] = useState(false);
+    const navigate = useNavigate();
+
+    const userData = postState?.users.find(user =>user.username===username );
 
     const bookmarkHandler =() =>{
       postState.bookmarks.filter((post) => post._id ===_id).length>0 
@@ -85,33 +89,43 @@ export function PostCard({post}){
 
     return (
             <li className="post-card" key={_id}>
-              <div>
                <div className="post-edit-delete">
-                 <p>created by : {username}</p>
-                 <span>created At: {createdAt}</span>
-                 {post.username === authState.user.username && <button className="edit-delete" onClick={toggleShowOptions}><MoreHorizIcon/></button>}
-                 {
-                  showOptions && 
-                  <div className='options-modal'>
-                    <button onClick={()=>{
-                      setShowEditPost(true)
-                      toggleShowOptions()
-                    }}>Edit</button>
-                    <hr/>
-                    <button onClick={()=>{
-                      deletePost(authState.token,_id,postDispatch)
-                    }}>Delete</button>
-                  </div>
-                 }
-                 </div>
-                 { showEditPost && 
-                  <div className="modal">
-                    <EditPostModal post ={post} showEditPost={showEditPost} setShowEditPost={setShowEditPost}/>
-                  </div>
-                 }
+                 <div className="avatar-container">
+                     <img src={userData.avatar} alt={userData.username} className="avatar"  onClick={()=> navigate(`/profile/${username}`)}/>
+                     <div className="post-user-details">
+                       <div className="post-header"  onClick={()=> navigate(`/profile/${username}`)}>
+                        <p><b>{userData.firstName}</b> @{username} . <span>{createdAt}</span></p>
+                        {post.username === authState.user.username && <button className="edit-delete" onClick={(event)=>{
+                          event.stopPropagation()
+                          toggleShowOptions();
+                          }}><MoreHorizIcon/></button>}
+                        {
+                          showOptions && 
+                          <div className='options-modal'>
+                            <button onClick={(event)=>{
+                              event.stopPropagation()
+                              setShowEditPost(true)
+                              toggleShowOptions()
+                             }}>Edit</button>
+                            <hr/>
+                            <button onClick={(event)=>{
+                              event.stopPropagation()
+                              deletePost(authState.token,_id,postDispatch)
+                             }}>Delete</button>
+                         </div>
+                        }
+                        { showEditPost && 
+                          <div className="modal">
+                            <EditPostModal post ={post} showEditPost={showEditPost} setShowEditPost={setShowEditPost}/> 
+                          </div>
+                        }
                  
+                      </div>
+                       <p>{content}</p>
+                     </div>
+                 </div>
                </div>
-               <p>{content}</p>
+       
                <div className="action-items">
                 <button onClick={likeHandler}>
                   {
@@ -135,3 +149,23 @@ export function PostCard({post}){
             </li>
     )
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

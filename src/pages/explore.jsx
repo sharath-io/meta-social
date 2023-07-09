@@ -1,26 +1,16 @@
-import { useContext, useState,useEffect } from "react"
+import { useContext, useState } from "react"
 
 import { PostContext } from "../index";
+import { getSortedPosts } from "../utils/getSortedPosts";
 import { PostCard } from "../components/PostCard/postCard";
 
 export function Explore(){
     const {postState} = useContext(PostContext);
-    const [displayPosts,setDisplayPosts] = useState(postState.posts);
     const [sortType,setSortType] = useState('Latest');
 
-    const getDisplayPosts = (sortType) =>{
-        if(sortType === 'Latest')
-        setDisplayPosts([...displayPosts].sort((a,b) => Date.parse(b.createdAt) - Date.parse(a.createdAt)))
-        else
-        setDisplayPosts([...displayPosts].sort((a,b) => b.likes.likeCount - a.likes.likeCount));
-    }
+    const sortedPosts = getSortedPosts(postState.posts,sortType);
 
-     const handleSortingChange = (event) => setSortType(event.target.value);
-
-     useEffect(()=>{
-        getDisplayPosts(sortType);
-        // eslint-disable-next-line
-     },[sortType])
+    const handleSortingChange = (event) => setSortType(event.target.value);
 
     return (
         <div>
@@ -40,7 +30,7 @@ export function Explore(){
                 <div>
                     <ul>
                         {
-                            displayPosts.map(post => <PostCard post={post} key={post.id}/>)
+                            sortedPosts.map(post => <PostCard post={post} key={post.id}/>)
                         }
                     </ul>
                 </div>
