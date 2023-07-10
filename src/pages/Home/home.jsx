@@ -43,7 +43,7 @@ export function Home(){
             <div className="main-content">
                 <div className="create-post">
                     <textarea placeholder="write a post" className="text-area" value={inputText} onChange={(e)=> setInputText(e.target.value)}></textarea>
-                    <button onClick={() => onPostClick(inputText,authState.token)}>Post</button>
+                    <button onClick={() => onPostClick(inputText,authState.token)} className="new-post-btn">Post</button>
                 </div>
                 <div className="post-heading-section">
                    <h1>{`${sortType} Posts`}</h1>
