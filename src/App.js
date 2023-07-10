@@ -8,8 +8,6 @@ import { useContext } from 'react';
 import { AuthContext } from './contexts/authContext';
 import { Liked } from './pages/liked';
 import { RightSidebar } from './components/RightSidebar/rightSidebar';
-import {Banner} from './assets/index';
-
 
 function App() {
   const location = useLocation();
@@ -43,7 +41,7 @@ function App() {
                       <li>- collaborate with others</li>
                     </ul>
                   </div>
-                  <img src={Banner} alt='meta-social' className="banner"/>
+                  <img src='https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHNvY2lhbCUyMG1lZGlhfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60' alt='meta-social' className="banner"/>
                </div>
           }
           </div>
