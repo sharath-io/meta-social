@@ -4,7 +4,6 @@ import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import ShareIcon from '@mui/icons-material/Share';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
@@ -136,7 +135,6 @@ export function PostCard({post}){
                   }{post?.likes?.likeCount}
                   </button>
                  
-                 <button><ChatBubbleOutlineIcon/></button>
                  <button onClick={bookmarkHandler}>
                   {
                     postState.bookmarks.filter((post) => post._id ===_id).length>0 
