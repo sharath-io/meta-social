@@ -9,13 +9,13 @@ export const users = [
   {
     _id: 1,
     firstName: "Adarsh",
-    lastName: "vardhan",
-    username: "adarshvardhan",
-    password: "adarshvardhan123",
+    lastName: "Ram",
+    username: "adarshram",
+    password: "adarshram123",
     bio:'Passionate computer scientist dedicated to pushing the boundaries of technology and creating innovative solutions.',
     createdAt: '2023-05-09T20:57:12+05:30',
     updatedAt: formatDate(),
-    website:'https://adarshvardhan.netlify.app/',
+    website:'https://adarshram.netlify.app/',
     avatar: 'https://i.pravatar.cc/150?img=12'
   },
   {
