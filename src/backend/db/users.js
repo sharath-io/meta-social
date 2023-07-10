@@ -32,18 +32,6 @@ export const users = [
   },
   {
     _id: uuid(),
-    firstName: "David",
-    lastName: "Johnson",
-    username: "davidjohnson",
-    password: "davidjohnson123",
-    bio:"Full-stack developer with a focus on JavaScript and Node.js. Enjoys building scalable and efficient applications. 💻",
-    createdAt: '2023-05-11T20:57:12+05:30',
-    updatedAt: formatDate(),
-    webiste:'https://davidjohnsondev.com',
-    avatar: 'https://i.pravatar.cc/150?img=33'
-  },
-  {
-    _id: uuid(),
     firstName: "Emily",
     lastName: "Smith",
     username: "emilysmith",

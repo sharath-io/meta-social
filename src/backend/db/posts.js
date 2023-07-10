@@ -104,32 +104,6 @@ export const posts = [
   {
     _id: uuid(),
     content:
-      "Excited to announce the launch of my new website. Check it out!",
-    likes: {
-      likeCount: 10,
-      likedBy: [],
-      dislikedBy: [],
-    },
-    username: "davidjohnson",
-    createdAt: '2023-06-22T20:57:12+05:30',
-    updatedAt: formatDate(),
-  },
-  {
-    _id: uuid(),
-    content:
-      "Spending quality time with family. Cherishing these moments.",
-    likes: {
-      likeCount: 12,
-      likedBy: [],
-      dislikedBy: [],
-    },
-    username: "davidjohnson",
-    createdAt: '2023-06-23T20:57:12+05:30',
-    updatedAt: formatDate(),
-  },
-  {
-    _id: uuid(),
-    content:
       "Attending a coding competition. Ready to showcase my skills!",
     likes: {
       likeCount: 16,
