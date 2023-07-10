@@ -11,7 +11,6 @@ export function AuthProvider({children}){
   const location = useLocation();
   const navigate = useNavigate();
 
-
   const [authState,authDispatch] = useReducer(authReducer, {
     isLoggedIn:false,
     user:{},
@@ -20,8 +19,9 @@ export function AuthProvider({children}){
 
   const userSignup = async (signUpData) => {
     try{
-      const {status, data} = await axios.post('/api/auth/signup', signUpData);
+      const {status, data} = await axios.post(`/api/auth/signup`, signUpData);
       if(status===201){
+        console.log('success here', status,data);
         localStorage.setItem('token', data.encodedToken);
         authDispatch({type:'SET_LOGGEDIN_TRUE', payload: true})
         authDispatch({type:'SET_USER', payload:data.createdUser});

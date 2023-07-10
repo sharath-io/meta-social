@@ -15,8 +15,8 @@ export function Home(){
 
     const loggedInUser = postState.users.find(({username})=> username===authState.user.username)
 
-    const postsOfFollowed = postState.posts.filter(post => loggedInUser.following.some(({username})=> username===post.username)
-                                    ||  post.username===loggedInUser.username);
+    const postsOfFollowed = postState.posts.filter(post => loggedInUser?.following.some(({username})=> username===post?.username)
+                                    ||  post.username===loggedInUser?.username);
 
     const sortedPosts = getSortedPosts(postsOfFollowed,sortType);
 
@@ -43,7 +43,7 @@ export function Home(){
             <div className="main-content">
                 <div className="create-post">
                     <textarea placeholder="write a post" className="text-area" value={inputText} onChange={(e)=> setInputText(e.target.value)}></textarea>
-                    <button onClick={() => onPostClick(inputText,authState.token)}>Post</button>
+                    <button onClick={() => onPostClick(inputText,authState.token)} className="new-post-btn">Post</button>
                 </div>
                 <div className="post-heading-section">
                    <h1>{`${sortType} Posts`}</h1>

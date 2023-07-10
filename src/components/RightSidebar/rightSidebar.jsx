@@ -13,12 +13,11 @@ export function RightSidebar(){
     const {authState} = useContext(AuthContext);
     const navigate = useNavigate();
 
-    const userData = postState.users.find(user => user.username === authState.user.username)
+    const userData = postState.users.find(user => user?.username === authState?.user?.username)
 
-    const usersToFollow = postState.users.filter(user => user.username!== userData.username)
-                           .filter(eachUser => !userData.following.find(data => data.username===eachUser.username))
+    const usersToFollow = postState?.users.filter(user => user?.username!== userData?.username)
+                           .filter(eachUser => !userData?.following.find(data => data?.username===eachUser?.username))
    
-    console.log('users to follow', usersToFollow);
    
     return (
         <div  className="right-sidebar">

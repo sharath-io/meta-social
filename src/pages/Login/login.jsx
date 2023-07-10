@@ -1,12 +1,11 @@
 import { useContext, useState } from "react"
-import {useNavigate} from 'react-router';
 import { AuthContext}  from '../../contexts/authContext';
 
 import './login.css';
+import { NavLink } from "react-router-dom";
 
 export function Login(){
-    const {userLogin} = useContext(AuthContext);
-    const navigate = useNavigate();
+    const {authState,userLogin} = useContext(AuthContext);
 
     const [userData, setUserData] = useState({
         username: '',
@@ -14,8 +13,8 @@ export function Login(){
     })
    
     const guestUserData = {
-        username: "adarshbalika",
-        password: "adarshBalika123",
+        username: "adarshram",
+        password: "adarshram123",
     }
 
     const loginHandler=(e)=>{
@@ -29,9 +28,11 @@ export function Login(){
         userLogin(guestUserData);
     }
 
+    if(authState.isLoggedIn)
+      return <div></div>
    
     return (
-        <div className="login-container">
+         <div className="login-container">
             <label>Username: </label>
             <input type="text" value={userData.username} onChange={(e)=> setUserData(prev => ({...prev, username:e.target.value}))}/>
             <label>Password: </label>
@@ -40,7 +41,7 @@ export function Login(){
             <button onClick={guestLoginHandler}>Login as Guest</button>
             <div>
               <span>Don't have an account? </span>
-              <button onClick={()=> navigate('/signup')}>Sign up here</button>
+              <NavLink to='/signup'>Sign up</NavLink>
             </div>
         </div>
     )

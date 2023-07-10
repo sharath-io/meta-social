@@ -1,11 +1,10 @@
 import { useContext, useState } from 'react';
-import {useNavigate} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 import './login.css';
 import { AuthContext } from '../../contexts/authContext';
 
 export function Signup(){
-    const navigate = useNavigate();
     const {userSignup} = useContext(AuthContext); 
 
     const [userDetails, setUserDetails] = useState({
@@ -13,7 +12,9 @@ export function Signup(){
         lastName: '',
         email: '',
         username: '',
-        password: ''
+        password: '',
+        confirmPassword:'',
+        avatar: 'https://i.pravatar.cc/150?img=11'
     });
 
     const signupHandler = (e) =>{
@@ -34,8 +35,14 @@ export function Signup(){
             <input type="text" onChange={(e)=> setUserDetails(prev => ({...prev, username:e.target.value}))}/>
             <label>Password: </label>
             <input type="password" onChange={(e)=> setUserDetails(prev => ({...prev, password:e.target.value}))}/>
+            <label>Confirm Password: </label>
+            <input type="password" onChange={(e)=> setUserDetails(prev => ({...prev, confirmPassword:e.target.value}))}/>
             <button onClick={signupHandler}>Register</button>
-            <p onClick={()=> navigate('/login')}>Already have an account Login ?</p>
+            <div>
+                <span>Already have an account? </span>
+                <NavLink to='/login'>Login</NavLink>
+            </div>
+            
         </div>
     )
 }
