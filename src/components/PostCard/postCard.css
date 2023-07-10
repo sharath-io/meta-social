@@ -32,7 +32,9 @@
 .edit-delete{
     background-color: white;
     border: none;
-    width: fit-content
+    text-align: right;
+    margin-right:0;
+    width: auto;
 }
 
 .options-modal{

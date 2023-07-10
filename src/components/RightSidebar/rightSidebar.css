@@ -1,0 +1,55 @@
+.right-sidebar{
+    margin: 1rem;
+    border: 1px solid #27ae60;
+    border-radius: 5px;
+    padding: 1rem;
+    
+  }
+
+  .right-sidebar  li{
+    padding: 1rem 0;
+  }
+
+  .user-follow-container{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    cursor: pointer;
+    
+  }
+
+  .user-follow-container button{
+    width: 5rem;
+    height: 2rem;
+    border-radius: 24px;
+    background-color: black;
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+  }
+
+  .user-details{
+    display:flex;
+    justify-content: flex-start;
+  }
+
+  .user-details div{
+    margin-top: 5px;
+    margin-left: 5px;
+  }
+
+  .follow-avatar{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 2px solid #27ae60;
+  }
+
+  .user-details .user-firstname{
+  font-weight: bolder;
+}
+
+  .user-details .user-firstname:hover{
+   text-decoration: underline;
+   
+  }
