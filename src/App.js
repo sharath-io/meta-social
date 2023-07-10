@@ -35,8 +35,8 @@ function App() {
                     <h1>Welcome to meta-social</h1>
                     <p>where you can post and share about :</p>
                     <ul>
+                      <li>- Projects</li>
                       <li>- Your interests</li>
-                      <li>- Share Projects</li>
                       <li>- Your experience</li>
                       <li>- collaborate with others</li>
                     </ul>

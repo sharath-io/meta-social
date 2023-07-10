@@ -15,8 +15,8 @@ export function Home(){
 
     const loggedInUser = postState.users.find(({username})=> username===authState.user.username)
 
-    const postsOfFollowed = postState.posts.filter(post => loggedInUser.following.some(({username})=> username===post.username)
-                                    ||  post.username===loggedInUser.username);
+    const postsOfFollowed = postState.posts.filter(post => loggedInUser?.following.some(({username})=> username===post?.username)
+                                    ||  post.username===loggedInUser?.username);
 
     const sortedPosts = getSortedPosts(postsOfFollowed,sortType);
 

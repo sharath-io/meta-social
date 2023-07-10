@@ -37,7 +37,7 @@ export function EditProfileModal({hideEdit,setHideEdit,profileData}){
              <label>username</label>
              <input type="text" value={updatedProfileData.username} name="username" onChange={handleUserDetailsChange} />
              <label>bio</label>
-             <input type="text" value={updatedProfileData.bio} name="bio"  onChange={handleUserDetailsChange}/>
+             <textarea type="text" value={updatedProfileData.bio} name="bio"  onChange={handleUserDetailsChange}></textarea>
              <label>Website</label>
              <input type="text" value={updatedProfileData.website} name="website"  onChange={handleUserDetailsChange}/>
              <button onClick={()=>{
