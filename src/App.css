@@ -115,3 +115,35 @@ li{
     display: flex;
     justify-content: space-between;
   }
+
+  .meta-media{
+    margin: 2rem;
+  }
+
+  .meta-media h1{
+    text-decoration: underline;
+  }
+
+  .meta-media-details > *{
+    padding: 1rem;
+  }
+
+  .meta-media-details p{
+    font-size: 25px;
+  }
+
+  .meta-media-details li{
+    font-size: 22px;
+  }
+
+  .meta-media-details li:hover{
+    color:#27ae60;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bolder;
+  }
+
+  .banner{
+    width: 100%;
+    margin-top: 5rem;
+  }

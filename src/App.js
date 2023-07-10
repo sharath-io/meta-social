@@ -1,7 +1,6 @@
-import { Routes,Route, NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { Routes,Route, NavLink,useLocation, useNavigate } from 'react-router-dom';
 
 import './App.css';
-import Mockman from "mockman-js";
 import {Navbar} from './components/index';
 import { RequiredAuth } from './components/requiredAuth';
 import {Home,Explore,Bookmark,Login,Signup,Profile} from './pages/index';
@@ -9,6 +8,7 @@ import { useContext } from 'react';
 import { AuthContext } from './contexts/authContext';
 import { Liked } from './pages/liked';
 import { RightSidebar } from './components/RightSidebar/rightSidebar';
+import {Banner} from './assets/index';
 
 
 function App() {
@@ -17,8 +17,6 @@ function App() {
   const {authState,  userLogout} = useContext(AuthContext);
   return (
     <div className="App">
-      {location.pathname==='/mockman' ? 
-      <Mockman/> :
       <div className='row'>
         <div className="col col-one" >
           <Navbar/>
@@ -32,6 +30,22 @@ function App() {
             <Route path="/liked" element={<RequiredAuth><Liked/></RequiredAuth>}/>
             <Route path="/profile/:username" element={<RequiredAuth><Profile/></RequiredAuth>}/>
           </Routes>
+          {
+            !authState.isLoggedIn 
+            && <div className="meta-media">
+                  <div className="meta-media-details">
+                    <h1>Welcome to meta-social</h1>
+                    <p>where you can post and share about :</p>
+                    <ul>
+                      <li>- Your interests</li>
+                      <li>- Share Projects</li>
+                      <li>- Your experience</li>
+                      <li>- collaborate with others</li>
+                    </ul>
+                  </div>
+                  <img src={Banner} alt='meta-social' className="banner"/>
+               </div>
+          }
           </div>
       
         <div className="col col-three">
@@ -47,8 +61,8 @@ function App() {
             
            </div>
             : <div className='login-signup'>
-                 <NavLink to="/login"><button className='login-btn'>Login</button></NavLink>
-                 <NavLink to="/signup"><button className='signup-btn'>Join meta-social</button></NavLink> 
+                 {location.pathname!=='/login' &&<NavLink to="/login"><button className='login-btn'>Login</button></NavLink>}
+                 {location.pathname!=='/signup' &&<NavLink to="/signup"><button className='signup-btn'>Join meta-social</button></NavLink> }
               </div>
           }
           
@@ -59,7 +73,7 @@ function App() {
         </div>
         
       </div>
-}
+
     </div>
   );
 }
