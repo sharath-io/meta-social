@@ -8,10 +8,10 @@ import { isFollowed } from '../../utils/isFollowed';
 import {followUserHandler} from '../../utils/followUserHandler';
 import {unFollowUserHandler} from '../../utils/unFollowUserHandler';
 
-export function ProfileCard({userDetails, userPosts}){
+export function ProfileCard({profileData, userPosts}){
     const {authState} = useContext(AuthContext);
     const {postState,postDispatch} = useContext(PostContext);
-    const {_id,avatar,username,firstName,bio,website,followers,following}  = userDetails;
+    const {_id,avatar,username,firstName,bio,website,followers,following}  = profileData;
     const [hideEdit,setHideEdit] = useState(true);
 
     return (
@@ -30,7 +30,7 @@ export function ProfileCard({userDetails, userPosts}){
             }
               {!hideEdit && 
                 <div className="modal">
-                  <EditProfileModal hideEdit={hideEdit} setHideEdit={setHideEdit} userDetails={userDetails}/>
+                  <EditProfileModal hideEdit={hideEdit} setHideEdit={setHideEdit} profileData={profileData}/>
                 </div>
               } 
             </div>
@@ -40,8 +40,8 @@ export function ProfileCard({userDetails, userPosts}){
                <p>{bio}</p>
                <p><b>{website}</b></p>
                <div className="followers-following">
-                <p><b>{following.length}</b>Following</p>
-                <p><b>{followers.length}</b>Followers</p>
+                <p><b>{following?.length}</b>Following</p>
+                <p><b>{followers?.length}</b>Followers</p>
                </div>
             </div>
             

@@ -4,21 +4,21 @@ import './profileCard.css';
 import CloseIcon from '@mui/icons-material/Close';
 import { updateUserHandler } from '../../utils/updateUserHandler';
 
-export function EditProfileModal({hideEdit,setHideEdit,userDetails}){
+export function EditProfileModal({hideEdit,setHideEdit,profileData}){
     const {authState} = useContext(AuthContext);
     const {postDispatch} = useContext(PostContext);
     const toggleShowEditProfile= ()=> setHideEdit(!hideEdit);
 
-    const [profileData,setProfileData] = useState({
-      firstName: userDetails.firstName,
-      lastName: userDetails.lastName,
-      username: userDetails.username,
-      bio: userDetails.bio,
-      website: userDetails.website,
+    const [updatedProfileData,setUpdatedProfileData] = useState({
+      firstName: profileData.firstName,
+      lastName: profileData.lastName,
+      username: profileData.username,
+      bio: profileData.bio,
+      website: profileData.website,
     })
 
     const handleUserDetailsChange =(e) =>{
-      setProfileData(user => ({...user,[e.target.name]: e.target.value}))
+      setUpdatedProfileData(user => ({...user,[e.target.name]: e.target.value}))
     }
 
     return (
@@ -31,18 +31,18 @@ export function EditProfileModal({hideEdit,setHideEdit,userDetails}){
              </div>
              <form className="edit-profile-form">
              <label>firstName</label>
-             <input type="text" value={profileData.firstName} name="firstName" onChange={handleUserDetailsChange}/>
+             <input type="text" value={updatedProfileData.firstName} name="firstName" onChange={handleUserDetailsChange} required/>
              <label>lastName</label>
-             <input type="text" value={profileData.lastName} name="lastName" onChange={handleUserDetailsChange} />
+             <input type="text" value={updatedProfileData.lastName} name="lastName" onChange={handleUserDetailsChange} />
              <label>username</label>
-             <input type="text" value={profileData.username} name="username" onChange={handleUserDetailsChange} />
+             <input type="text" value={updatedProfileData.username} name="username" onChange={handleUserDetailsChange} />
              <label>bio</label>
-             <input type="text" value={profileData.bio} name="bio"  onChange={handleUserDetailsChange}/>
+             <input type="text" value={updatedProfileData.bio} name="bio"  onChange={handleUserDetailsChange}/>
              <label>Website</label>
-             <input type="text" value={profileData.website} name="website"  onChange={handleUserDetailsChange}/>
+             <input type="text" value={updatedProfileData.website} name="website"  onChange={handleUserDetailsChange}/>
              <button onClick={()=>{
-;                updateUserHandler(profileData,authState.token,postDispatch,)
-                toggleShowEditProfile();
+;                updateUserHandler(updatedProfileData,authState.token,postDispatch)
+                 toggleShowEditProfile();
              }}>Update</button>
              </form>
           </div>
