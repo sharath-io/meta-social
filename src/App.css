@@ -89,6 +89,7 @@ li{
   right: 0;
   bottom: 0;
   position: fixed;
+  z-index: 999;
 }
 
 .overlay {
@@ -105,6 +106,7 @@ li{
     padding: 14px 28px;
     border-radius: 3px;
     width: 40rem;
+    z-index: 999;
   }
 
   .modal-content > *{
