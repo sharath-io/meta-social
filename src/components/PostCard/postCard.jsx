@@ -93,7 +93,7 @@ export function PostCard({post}){
                      <img src={userData.avatar} alt={userData.username} className="avatar"  onClick={()=> navigate(`/profile/${username}`)}/>
                      <div className="post-user-details">
                        <div className="post-header"  onClick={()=> navigate(`/profile/${username}`)}>
-                        <p><b>{userData.firstName}</b> @{username} . <span>{createdAt}</span></p>
+                        <p><b>{userData.firstName}</b> @{username}  <span>{createdAt}</span></p>
                         {post.username === authState.user.username && <button className="edit-delete" onClick={(event)=>{
                           event.stopPropagation()
                           toggleShowOptions();
@@ -126,15 +126,18 @@ export function PostCard({post}){
                </div>
        
                <div className="action-items">
-                <button onClick={likeHandler}>
+
+                <div className='like-container'>
+                 <button onClick={likeHandler}>
                   {
                     isLiked()
                     ? <FavoriteIcon className='fill-icon'/>
                     : <FavoriteBorderIcon/>
-                     
-                  }{post?.likes?.likeCount}
+                  }
                   </button>
-                 
+                  <p>{post?.likes?.likeCount}</p>
+                </div>
+                
                  <button onClick={bookmarkHandler}>
                   {
                     postState.bookmarks.filter((post) => post._id ===_id).length>0 
@@ -147,23 +150,3 @@ export function PostCard({post}){
             </li>
     )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

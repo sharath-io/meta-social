@@ -14,14 +14,23 @@
 
 .action-items button{
     background-color: white;
-    border: none;
+    width:min-content;
+    border:none;
+    cursor: pointer;
+}
+
+.action-items .like-container{
+    display: flex;
+}
+
+.like-container p{
+    margin-top: 3.5px;
+    padding-left: 5px;
 }
 
 .fill-icon{
     color: #27ae60;
 }
-
-
 
 .post-edit-delete{
     display:flex;
@@ -60,33 +69,29 @@
     background-color: #27ae60;
 }
 
-   /* .modal-content textarea{
-  background-color: red;
-  }  */
-
-  .avatar-container{
+.avatar-container{
     display:flex;
     justify-content: flex-start;
-  }
+}
 
-  .avatar{
+.avatar{
     width: 3.5rem;
     height: 3.5rem;
     border-radius: 50%;
-    /* border: 2px solid #27ae60; */
     cursor: pointer;
-  }
+    border:1px solid #27ae60;
+}
 
-  .post-user-details{
+.post-user-details{
     margin: 0 1rem;
-  }
+}
 
-  .post-user-details > *{
+.post-user-details > *{
     padding-bottom: 1rem;
-  }
+}
 
-  .post-header{
+.post-header{
     display:flex;
     justify-content: space-between;
     cursor: pointer;
-  } 
+} 
