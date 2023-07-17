@@ -16,7 +16,8 @@ export const users = [
     createdAt: '2023-05-09T20:57:12+05:30',
     updatedAt: formatDate(),
     website:'https://adarshram.netlify.app/',
-    avatar: 'https://i.pravatar.cc/150?img=12'
+    avatar: 'https://i.pravatar.cc/150?img=12',
+    backgroundImage: 'https://images.unsplash.com/photo-1490598000245-075175152d25?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
   },
   {
     _id: uuid(),
@@ -28,7 +29,8 @@ export const users = [
     createdAt: '2023-05-10T20:57:12+05:30',
     updatedAt: formatDate(),
     website:'https://davidmillerstartup.com',
-    avatar: 'https://i.pravatar.cc/150?img=13'
+    avatar: 'https://i.pravatar.cc/150?img=13',
+    backgroundImage: 'https://images.unsplash.com/photo-1490598000245-075175152d25?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
   },
   {
     _id: uuid(),
@@ -40,7 +42,8 @@ export const users = [
     createdAt: '2023-05-12T20:57:12+05:30',
     updatedAt: formatDate(),
     website:'emily.smith@yahoo.com',
-    avatar: 'https://i.pravatar.cc/150?img=38'
+    avatar: 'https://i.pravatar.cc/150?img=38',
+    backgroundImage: 'https://images.unsplash.com/photo-1490598000245-075175152d25?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
   },
   {
     _id: uuid(),
@@ -52,7 +55,8 @@ export const users = [
     createdAt: '2023-05-13T20:57:12+05:30',
     updatedAt: formatDate(),
     website:'ttps://johndoeportfolio.com',
-    avatar: 'https://i.pravatar.cc/150?img=68'
+    avatar: 'https://i.pravatar.cc/150?img=68',
+    backgroundImage: 'https://images.unsplash.com/photo-1490598000245-075175152d25?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
   },
   {
     _id: uuid(),
@@ -64,7 +68,8 @@ export const users = [
     createdAt: '2023-05-14T20:57:12+05:30',
     updatedAt: formatDate(),
     website:'https://alexandercodesai.com',
-    avatar: 'https://i.pravatar.cc/150?img=52'
+    avatar: 'https://i.pravatar.cc/150?img=52',
+    backgroundImage: 'https://images.unsplash.com/photo-1490598000245-075175152d25?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
   },
   {
     _id: uuid(),
@@ -76,6 +81,7 @@ export const users = [
     createdAt: '2023-05-15T20:57:12+05:30',
     updatedAt: formatDate(),
     website:'https://laurawritesstories.com',
-    avatar: 'https://i.pravatar.cc/150?img=41'
+    avatar: 'https://i.pravatar.cc/150?img=41',
+    backgroundImage: 'https://images.unsplash.com/photo-1490598000245-075175152d25?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
   }
 ];
