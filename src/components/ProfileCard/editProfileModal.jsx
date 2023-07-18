@@ -43,7 +43,7 @@ export function EditProfileModal({hideEdit,setHideEdit,profileData}){
              <button onClick={()=>{
 ;                updateUserHandler(updatedProfileData,authState.token,postDispatch)
                  toggleShowEditProfile();
-             }}>Update</button>
+             }} className="update-profile-btn">Update</button>
              </form>
           </div>
       </div>
