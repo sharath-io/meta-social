@@ -25,7 +25,7 @@ export function EditPostModal({post,showEditPost,setShowEditPost}){
               <button onClick={()=>{
                 updatePostHandler(authState.token,postDispatch,_id,postContent)
                 toggleShowEditPost();
-              }}>Update</button>
+              }} className="update-post-btn">Update</button>
           </div>
 
         </div>
