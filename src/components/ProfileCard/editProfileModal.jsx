@@ -3,11 +3,15 @@ import { AuthContext,PostContext } from '../../index';
 import './profileCard.css';
 import CloseIcon from '@mui/icons-material/Close';
 import { updateUserHandler } from '../../utils/updateUserHandler';
+import { MdPhotoCamera } from "react-icons/md";
+import {EditProfileImage} from './editProfileImage';
+
 
 export function EditProfileModal({hideEdit,setHideEdit,profileData}){
     const {authState} = useContext(AuthContext);
     const {postDispatch} = useContext(PostContext);
     const toggleShowEditProfile= ()=> setHideEdit(!hideEdit);
+    const [showProfileOptions,setShowProfileOptions] = useState(false);
 
     const [updatedProfileData,setUpdatedProfileData] = useState({
       firstName: profileData.firstName,
@@ -15,6 +19,7 @@ export function EditProfileModal({hideEdit,setHideEdit,profileData}){
       username: profileData.username,
       bio: profileData.bio,
       website: profileData.website,
+      avatar: profileData.avatar,
     })
 
     const handleUserDetailsChange =(e) =>{
@@ -29,6 +34,14 @@ export function EditProfileModal({hideEdit,setHideEdit,profileData}){
                <h3>Edit Your user Profile</h3>
                <CloseIcon onClick={toggleShowEditProfile}/>
              </div>
+             <div className='edit-profileImg-container'>
+              <img src={updatedProfileData.avatar}  alt='profile' className='new-profile-avatar'/>
+              <MdPhotoCamera className='edit-profile-icon' onClick={()=> setShowProfileOptions(!showProfileOptions)}/>
+              {showProfileOptions && <div className='profile-modal'>
+                <EditProfileImage setUpdatedProfileData={setUpdatedProfileData} setShowProfileOptions={setShowProfileOptions}/>
+                </div>}
+             </div>
+             
              <form className="edit-profile-form">
              <label>firstName</label>
              <input type="text" value={updatedProfileData.firstName} name="firstName" onChange={handleUserDetailsChange} required/>
