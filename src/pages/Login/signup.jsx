@@ -1,11 +1,18 @@
 import { useContext, useState } from 'react';
 import {NavLink} from 'react-router-dom';
+import { FaEyeSlash } from "react-icons/fa6";
+import { FaEye } from "react-icons/fa6";
 
 import './login.css';
 import { AuthContext } from '../../contexts/authContext';
 
 export function Signup(){
     const {userSignup} = useContext(AuthContext); 
+    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+    const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] = useState(false);
+
+    const toggleVisibility =() => setIsPasswordVisible(!isPasswordVisible);
+    const toggleConfirmPassword =()=> setIsConfirmPasswordVisible(!isConfirmPasswordVisible);
 
     const [userDetails, setUserDetails] = useState({
         firstName: '', 
@@ -35,9 +42,17 @@ export function Signup(){
             <label>Username </label>
             <input type="text" onChange={(e)=> setUserDetails(prev => ({...prev, username:e.target.value}))}/>
             <label>Password: </label>
-            <input type="password" onChange={(e)=> setUserDetails(prev => ({...prev, password:e.target.value}))}/>
+            <div className='password-container'>
+               <input type={isPasswordVisible ? 'text' : "password"} placeholder={isPasswordVisible ? "enter password" : "********"}
+                  onChange={(e)=> setUserDetails(prev => ({...prev, password:e.target.value}))}/>
+                 {isPasswordVisible ? <FaEye onClick={toggleVisibility} className='password-icon'/>  : <FaEyeSlash onClick={toggleVisibility} className='password-icon'/>} 
+            </div>
             <label>Confirm Password: </label>
-            <input type="password" onChange={(e)=> setUserDetails(prev => ({...prev, confirmPassword:e.target.value}))}/>
+            <div className='password-container'>
+              <input type={isConfirmPasswordVisible ? 'text' : "password"} placeholder={isConfirmPasswordVisible ? "enter password" : "********"}
+                  onChange={(e)=> setUserDetails(prev => ({...prev, confirmPassword:e.target.value}))}/>
+              {isConfirmPasswordVisible ? <FaEye onClick={toggleConfirmPassword} className='password-icon'/>  : <FaEyeSlash onClick={toggleConfirmPassword} className='password-icon'/>} 
+            </div>
             <button onClick={signupHandler}>Register</button>
             <div>
                 <span>Already have an account? </span>

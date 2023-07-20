@@ -5,6 +5,11 @@
     font-size: 20px;
 }
 
+.login-container input{
+   height: 1.4rem;
+   padding: 8px;
+}
+
 .login-container > *{
     margin: 0.2rem 0;
 }
@@ -13,4 +18,14 @@
     width: 10rem;
 }
 
-
+.password-container{
+    position: relative;
+  }
+  
+.password-icon {
+    position: absolute;
+    top: 20%;
+    left: 47%;
+    cursor: pointer;
+    font-size: 19px;
+  }
