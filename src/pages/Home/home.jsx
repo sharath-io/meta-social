@@ -22,6 +22,8 @@ export function Home(){
 
     const handleSortingChange = (event) => setSortType(event.target.value);
 
+    const isPostDisabled = inputText.trim()==='';
+
     const onPostClick = async(inputText,token) =>{
         try{
             const {data, status} = await createPost(inputText,token);
@@ -43,7 +45,7 @@ export function Home(){
             <div className="main-content">
                 <div className="create-post">
                     <textarea placeholder="write a post" className="text-area" value={inputText} onChange={(e)=> setInputText(e.target.value)}></textarea>
-                    <button onClick={() => onPostClick(inputText,authState.token)} className="new-post-btn">Post</button>
+                    <button onClick={() => onPostClick(inputText,authState.token)} className={isPostDisabled ? "new-post-btn post-diabled" : "new-post-btn" } disabled={isPostDisabled}>Post</button>
                 </div>
                 <div className="post-heading-section">
                    <h1>{`${sortType} Posts`}</h1>
