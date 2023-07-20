@@ -11,12 +11,18 @@ import {unFollowUserHandler} from '../../utils/unFollowUserHandler';
 export function ProfileCard({profileData, userPosts}){
     const {authState} = useContext(AuthContext);
     const {postState,postDispatch} = useContext(PostContext);
-    const {_id,avatar,username,firstName,bio,website,followers,following}  = profileData;
+    const {_id,avatar,username,firstName,bio,website,followers,following,backgroundImage}  = profileData;
     const [hideEdit,setHideEdit] = useState(true);
 
     return (
-        <div>
+        <div className='profile-details'>
+
+           <div className='profile-header-image'>
+            <img src={backgroundImage} alt='background' className="background-image"/>
             <img src={avatar} alt={username} className="profile-avatar"/>
+           </div>
+
+           <div className="profile-content">
             <div className="user-heading">
               <h2>{firstName}</h2>
               {authState.user.username === username 
@@ -27,7 +33,7 @@ export function ProfileCard({profileData, userPosts}){
                                 ? unFollowUserHandler(authState.token,_id,postDispatch)
                                 : followUserHandler(authState.token,_id,postDispatch) }
                        }>{isFollowed(authState.user,postState.users,_id) ? 'Unfollow' : 'follow'}</button>
-            }
+                  }
               {!hideEdit && 
                 <div className="modal">
                   <EditProfileModal hideEdit={hideEdit} setHideEdit={setHideEdit} profileData={profileData}/>
@@ -51,5 +57,6 @@ export function ProfileCard({profileData, userPosts}){
               }
             </ul>
         </div>
+      </div>
     )
 }

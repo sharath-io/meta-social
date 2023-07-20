@@ -19,7 +19,7 @@
   border: 0.1px solid rgb(225 228 232/1);
   border-bottom: none;
   border-left: none;
-  height: 100vh;
+  height: 130vh;
 }
 
 .col-one{
@@ -48,6 +48,10 @@
 .main-content{
   height: 100vh;
   margin: 2rem;
+}
+
+.profile-main-content{
+  height: 100vh;
 }
 
 .login-signup{
@@ -98,8 +102,8 @@ li{
 
 .modal-content {
     position: absolute;
-    top: 35%;
-    left: 50%;
+    top: 50%;
+    left: 45%;
     transform: translate(-50%, -50%);
     line-height: 1.4;
     background-color: #f1f1f1; 

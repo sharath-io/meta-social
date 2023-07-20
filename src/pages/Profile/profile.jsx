@@ -37,7 +37,7 @@ export function Profile(){
              <div className='content-heading'>@{profileData.username} ({userPosts.length} posts)</div>
             </div>
 
-            <div className="main-content">
+            <div className="profile-main-content">
                <div>
                 <ProfileCard profileData={profileData} userPosts={userPosts} />
                </div>  

@@ -14,7 +14,6 @@ export function Bookmark(){
             </div>
 
             <div className="main-content">
-               <p> this is about bookmark page</p>
 
                 <div>
                     {postState.bookmarks?.length>0
@@ -26,6 +25,7 @@ export function Bookmark(){
                   : <p>Empty bookmarks</p>
                  }
                 </div>
+                
             </div>
             
         </div>
