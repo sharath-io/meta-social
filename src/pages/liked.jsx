@@ -15,7 +15,6 @@ export function Liked(){
             </div>
 
             <div className="main-content">
-               <p> this is about liked posts</p>
 
                 <div>
                     {likedPosts?.length>0
@@ -24,9 +23,10 @@ export function Liked(){
                             likedPosts?.map(post => <PostCard post={post} key={post.id}/>)
                         }
                     </ul>
-                  : <p>Empty bookmarks</p>
+                  : <p>Not liked anything ?</p>
                  }
                 </div>
+                
             </div>
 
             
